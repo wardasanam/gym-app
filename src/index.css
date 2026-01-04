@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-zinc-950 text-white antialiased;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  /* Custom Scrollbar to match ForgeFit aesthetic */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #09090b;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #84cc16;
+    border-radius: 10px;
+    border: 2px solid #09090b;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a3e635;
+  }
+}
+
+@layer components {
+  /* High-end Glassmorphism effect */
+  .vivid-glass {
+    @apply bg-black/90 backdrop-blur-[30px] border border-lime-400/20 shadow-2xl;
+  }
+
+  /* Vivid gradient background for sections */
+  .vivid-gradient-bg {
+    @apply bg-vivid-gradient bg-[length:400%_400%] animate-gradient-shift;
+  }
+
+  /* Utility for hiding scrollbars on containers while keeping functionality */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer utilities {
+  /* Text stroke for the outlined "Champions" and "Evolution" headings */
+  .text-outline {
+    -webkit-text-stroke: 1px rgba(132, 204, 22, 0.5);
+    color: transparent;
+  }
+
+  .drop-shadow-neon {
+    filter: drop-shadow(0 0 20px rgba(132, 204, 22, 0.4));
+  }
+}
